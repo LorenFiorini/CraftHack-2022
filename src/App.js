@@ -1,24 +1,26 @@
-import "./App.css";
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import GuideInfo from './components/GuideInfo'
+import Login from './components/Login'
+import UserInfo from './components/UserInfo'
+import TourBtn from './components/TourBtn'
 
-function App() {
+const App = () => {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/guidinfo' element={<GuideInfo/>}/>
+          <Route path='/userinfo' element={<UserInfo/>} />
+          <Route path='/' element={<TourBtn/>} exact />
+        </Routes>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
