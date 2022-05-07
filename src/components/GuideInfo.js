@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
-import DatePicker from "react-date-picker";
-import "react-datepicker/dist/react-datepicker.css";
 
 const GuideInfo = () => {
   const Languages = [
@@ -79,45 +77,43 @@ const GuideInfo = () => {
 
   return (
     <>
-      <form onSubmit={addGuide}>
-        <div>
+      <div className="title">
+        <p className="text-white">GUIDE - New Tour Post</p>
+      </div>
+      <form onSubmit={addGuide} className="guide-page">
+        <div className="name_sect">
           <label>Name</label>
           <input type="text" value={newName} onChange={nameChangeHandler} />
         </div>
-        <div>
-          <h4>Languages</h4>
-          {newLanguage}
+        <div className="name_sect">
+          <label>Languages</label>
+          <MultiSelect
+            onChange={languageChangeHandler}
+            value={newLanguage}
+            options={Languages}
+          />
         </div>
 
-        <MultiSelect
-          onChange={languageChangeHandler}
-          value={newLanguage}
-          options={Languages}
-        />
-        <div>
-          <label>
-            Description:
-            <textarea
-              value={newDescription}
-              onChange={descriptionChangeHandler}
-            />
-          </label>
+        <div className="name_sect">
+          <label>Description </label>
+          <textarea
+            value={newDescription}
+            onChange={descriptionChangeHandler}
+          />
         </div>
-        <div>
-          <label>pick a date:</label>
-        
-
-          {/* <input
+        <div className="name_sect">
+          <label>Pick a date:</label>
+          <input
             type="date"
             name="date"
             value={newDate}
-            onChange={dateChangeHandler}
-          /> */}
+            // onChange={dateChangeHandler}
+          />
         </div>
-        <div>
-          <label>area</label>
+        <div className="name_sect">
+          <label>Area</label>
           <select
-            name="area"
+            name="rea"
             placeholder="select a district"
             value={newArea}
             onChange={areaChangeHandler}

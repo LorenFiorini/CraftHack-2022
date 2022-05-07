@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Button, Modal } from "react-bootstrap";
@@ -9,6 +8,7 @@ const UserInfo = () => {
   const [tourData, setTourData] = useState([]);
   const handleClose = () => setFilterClick(false);
   const handleShow = () => setFilterClick(true);
+
 
   const getData = () => {
     fetch("dbReal.json", {
@@ -47,32 +47,50 @@ const UserInfo = () => {
             <button onClick={handleShow}>Sort</button>
           </div>
         </div>
-        <Modal show={filterClick} onHide={handleClose}>
-          <FilteredItems />
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
+
         <div className="guides">
           {tourData.map((tour) => (
             <div key={tour.id} className="guides-single">
               <div className="guides-single_top">
                 <div className="photo col-4">
-                  {" "}
                   <img className="img-fluid" src={tour.img} alt="divImg" />
                 </div>
-                <div className=" col">
+                <div className=" col ">
                   <p>
-                    <strong>{tour.name}</strong>{" "}
+                    <strong>{tour.name}</strong>
                   </p>
+                  <div className="svg-rating">
+                    {[...Array(5)].map((elementInArray, index) => {
+                      return (
+                        <span
+                          key={index}
+                          className={
+                            index <= tour.rating - 1 ? "filled" : "not-filled"
+                          }
+                        >
+                          {elementInArray}
+                          <svg
+                            fill="currentColor"
+                            width="13"
+                            height="13"
+                            viewBox="0 0 22 22"
+                            class="star-svg"
+                          >
+                            <path
+                              fill="currentColor"
+                              stroke="none"
+                              stroke-miterlimit="10"
+                              stroke-width="0"
+                              d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                            ></path>
+                          </svg>
+                        </span>
+                      );
+                    })}
+                  </div>
 
-                  <p> {`Rating: *${tour.rating}${tour.totalVotes}`}</p>
+
+                  <p> {`${tour.rating} | ${tour.totalVotes}`} Reviews</p>
                   <p>District: {tour.area}</p>
                 </div>
               </div>
@@ -106,6 +124,18 @@ const UserInfo = () => {
           ))}
         </div>
       </div>
+      <Modal show={filterClick} onHide={handleClose}>
+        <FilteredItems />
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
