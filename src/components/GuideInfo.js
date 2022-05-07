@@ -34,9 +34,9 @@ const GuideInfo = () => {
       area: newArea,
       rating: 0,
       description: newDescription,
-      totalVotes: 0,
       pricePerHour: 2000,
       rating: (Math.random() * 5).toFixed(2),
+      totalVotes: Math.floor(Math.random() * (220 - 55 + 1) + 55),
     };
 
     if (
