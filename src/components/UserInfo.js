@@ -1,60 +1,60 @@
-import React from 'react'
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { Button, Modal } from "react-bootstrap";
+import FilteredItems from "./FilteredItems";
 
 const UserInfo = ({}) => {
+  const [results, setResults] = useState([]);
+  const [filterClick, setFilterClick] = useState(false);
+
+  const handleClose = () => setFilterClick(false);
+  const handleShow = () => setFilterClick(true);
 
 
-
+  useEffect(() => {
+    axios.get("http://localhost:3001/guids").then((response) => {
+      setResults(response.data);
+    });
+  }, []);
 
   return (
     <div>
-        <div>
-            <label>languages</label>
-            <select name='languages'>
-                <option disabled value="">Select a country</option>
-                <option value="SQ">Albanian</option>
-                <option value="AR">Arabic</option>
-                <option value="HY">Armenian</option>
-                <option value="EU">Basque</option>
-                <option value="BN">Bengali</option>
-            </select>
-        </div>
-        <div>
-            <label>pick a date:</label>
-            <input type="date" name="date"/>            
-        </div>
-        <div>
-            <label >area</label>
-            <select name='area' placeholder='select a district'>
-                <option value="I">Várkerület</option>
-                <option value="II">-</option>
-                <option value="III">Óbuda-Békásmegyer</option>
-                <option value="IV">	Újpest</option>
-                <option value="V">Belváros-Lipótváros</option>
-                <option value="VI">Terézváros</option>
-                <option value="VII">Erzsébetváros</option>
-                <option value="VIII">Józsefváros</option>
-                <option value="IX">Ferencváros</option>
-                <option value="X">Kőbánya</option>
-                <option value="XI">Újbuda</option>
-                <option value="XII">Hegyvidék</option>
-                <option value="XIII">Vizafogó</option>
-                <option value="XIV">Zugló</option>
-                <option value="XV">Rákospalota</option>
-                <option value="XVI">-</option>
-                <option value="XVII">Rákosmente</option>
-                <option value="XVIII">Pestszentlőrinc</option>
-                <option value="XIX">Kispest</option>
-                <option value="XX">Pesterzsébet</option>
-                <option value="XXI">Csepel</option>
-                <option value="XXII">Budafok-Tétény</option>
-                <option value="XXIII">Soroksár</option>
-            </select>
-        </div>
-        <div>
-            <button>Search</button>
-        </div>
-    </div>
-  )
-}
+      <button onClick={ handleShow}>Filter It</button>
 
-export default UserInfo
+      <Modal show={filterClick} onHide={handleClose}>
+      <FilteredItems/>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {results.map((result) => (
+        <div key={result.id}>
+          <div>
+            <img src="" alt="divImg" />
+            <div>
+              {/* <p>{result.description}</p> */}
+              {/* {`*${result.rating}${results.total}`} */}
+            </div>
+          </div>
+          <div>
+            <div>
+              <img src="" alt="avatar" />
+              <p>{result.name}</p>
+            </div>
+            <div>{/* {result.cost} */}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default UserInfo;

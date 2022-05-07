@@ -4,10 +4,9 @@ import GuideInfo from './components/GuideInfo'
 import Login from './components/Login'
 import UserInfo from './components/UserInfo'
 import TourBtn from './components/TourBtn'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
-
-
 
   return (
     <Router>

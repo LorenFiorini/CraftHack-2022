@@ -27,6 +27,12 @@ const GuideInfo = () =>{
             date: newDate,
             area: newArea,
         }
+
+        
+        if( newName=== '' || newLanguage === '' || newDate === '' || newArea === '' ){
+            alert('please fill all the fields')
+            return 
+        }
         axios
         .post('http://localhost:3001/guids', guidObject)
         .then(response => {
