@@ -25,6 +25,7 @@ const GuideInfo = () => {
   const [newLanguage, setNewLanguage] = useState([]);
   const [newDate, setNewDate] = useState("");
   const [newArea, setNewArea] = useState("");
+  const [newDescription, setNewDescription] = useState('')
 
   const addGuid = (event) => {
     event.preventDefault();
@@ -33,6 +34,7 @@ const GuideInfo = () => {
       language: newLanguage,
       date: newDate,
       area: newArea,
+      description: newDescription
     };
 
     if (
@@ -51,6 +53,7 @@ const GuideInfo = () => {
       setNewLanguage([]);
       setNewDate("");
       setNewArea("");
+      setNewDescription('')
       setNewGuid(guidObject);
     });
     console.log(newGuid);
@@ -70,6 +73,9 @@ const GuideInfo = () => {
   const areaChangeHandler = (event) => {
     setNewArea(event.target.value);
   };
+  const descriptionChangeHandler = (event) => {
+    setNewDescription(event.target.value);
+  };
 
   return (
     <form onSubmit={addGuid}>
@@ -84,6 +90,12 @@ const GuideInfo = () => {
         </div>
 
         <MultiSelect onChange={languageChangeHandler} value={newLanguage} options={Languages} />
+      </div>
+      <div>
+        <label>
+          Description:
+          <textarea value={newDescription} onChange={descriptionChangeHandler} />
+        </label>
       </div>
       <div>
         <label>pick a date:</label>
@@ -102,6 +114,7 @@ const GuideInfo = () => {
           value={newArea}
           onChange={areaChangeHandler}
         >
+          <option disabled value="none">Select...</option>
           <option value="I">Várkerület</option>
           <option value="II">II</option>
           <option value="III">Óbuda-Békásmegyer</option>
