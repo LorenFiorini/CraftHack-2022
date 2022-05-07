@@ -5,7 +5,6 @@ import "react-multiple-select-dropdown-lite/dist/index.css";
 
 const GuideInfo = () => {
 
-
   const Languages = [
     { label: "Albanian", value: "Albanian" },
     { label: "Arabic", value: "Arabic" },
@@ -34,14 +33,16 @@ const GuideInfo = () => {
       language: newLanguage,
       date: newDate,
       area: newArea,
-      description: newDescription
+      description: newDescription,
+      rating: (Math.random() * 5).toFixed(2)
     };
 
     if (
       newName === "" ||
       newLanguage === [] ||
       newDate === "" ||
-      newArea === ""
+      newArea === "" ||
+      newDescription === ""
     ) {
       alert("please fill all the fields");
       return;
@@ -114,7 +115,7 @@ const GuideInfo = () => {
           value={newArea}
           onChange={areaChangeHandler}
         >
-          <option disabled value="none">Select...</option>
+          <option disabled value="">Select...</option>
           <option value="I">Várkerület</option>
           <option value="II">II</option>
           <option value="III">Óbuda-Békásmegyer</option>
