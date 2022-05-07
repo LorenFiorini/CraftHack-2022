@@ -9,7 +9,8 @@ const UserInfo = ({}) => {
     <div>
         <div>
             <label>languages</label>
-            <select name='languages' placeholder='select a country'>
+            <select name='languages'>
+                <option disabled value="">Select a country</option>
                 <option value="SQ">Albanian</option>
                 <option value="AR">Arabic</option>
                 <option value="HY">Armenian</option>
