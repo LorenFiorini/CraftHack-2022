@@ -11,8 +11,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <Router>
-        <img src="img/phone-frame.png" alt="phone" className=" bg_app" />
       <div className="tier">
+        <img src="img/phone-frame.png" alt="phone" className=" bg_app" />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/guidinfo" element={<GuideInfo />} />

@@ -7,6 +7,7 @@ body {
   // background-color: gray;
 }
 .tier {
+  position: relative;
   background-repeat: no-repeat;
   background-size: contain;
   // background-color: yellow;
@@ -57,7 +58,10 @@ button{
   padding-top: 12px;
 }
 .bg_app {
-  height: 100%;
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: inherit;
   position: absolute;
   z-index: 9;
 }
