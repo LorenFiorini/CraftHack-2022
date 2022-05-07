@@ -10,7 +10,6 @@ const UserInfo = () => {
   const handleClose = () => setFilterClick(false);
   const handleShow = () => setFilterClick(true);
 
-
   const getData = () => {
     fetch("db.json", {
       headers: {
@@ -23,8 +22,8 @@ const UserInfo = () => {
         return response.json();
       })
       .then(function (res) {
-        console.log(res.guids);
-        setTourData(res.guids);
+        console.log(res.guides);
+        setTourData(res.guides);
       });
   };
 
@@ -36,7 +35,9 @@ const UserInfo = () => {
     <>
       <div className="scrollable">
         <div className="guide-login text-white">
-          <a className="text-white" href="/guidinfo">Login as a guide</a>
+          <a className="text-white" href="/guidinfo">
+            Login as a guide
+          </a>
         </div>
         <div className="filter-sort">
           <div className="filter">
@@ -87,14 +88,18 @@ const UserInfo = () => {
                   </div>
                   <div className="d-flex footer-guide">
                     {" "}
-                    <p>From <br /><strong>{tour.date}</strong> </p>
-                    <div className="view-more"><button>View Offer</button> </div>
+                    <p>
+                      From <br />
+                      <strong>{tour.date}</strong>{" "}
+                    </p>
+                    <div className="view-more">
+                      <button>View Offer</button>{" "}
+                    </div>
                     {/* <span>
                        {tour.pricePerHour}<span>HUF</span> 
                     </span> */}
                   </div>
                   {/* <div className="view-more"><button>View Offer</button> </div> */}
-
                 </div>
               </div>
             </div>

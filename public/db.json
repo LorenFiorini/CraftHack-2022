@@ -1,8 +1,9 @@
 {
-  "guids": [
+  "guides": [
     {
-      "img": "https://picsum.photos/id/43/300/200","name": "Hassan",
-      "languages": ["hungarian","french", "german"],
+      "img": "https://picsum.photos/id/43/300/200",
+      "name": "Hassan",
+      "languages": ["hungarian", "french", "german"],
       "date": "2022-05-19",
       "area": "VIII",
       "rating": "",
@@ -12,7 +13,8 @@
       "id": 2
     },
     {
-      "img": "https://picsum.photos/id/25/300/200","name": "Zolt",
+      "img": "https://picsum.photos/id/25/300/200",
+      "name": "Zolt",
       "languages": ["english", "hungarian", "spanish"],
       "date": "2022-06-12",
       "area": "XII",
@@ -23,7 +25,8 @@
       "id": 3
     },
     {
-      "img": "https://picsum.photos/id/8/300/200","name": "Henry",
+      "img": "https://picsum.photos/id/8/300/200",
+      "name": "Henry",
       "languages": ["french", "english"],
       "date": "2022-07-02",
       "area": "VII",
@@ -33,6 +36,5 @@
       "pricePerHour": 1400,
       "id": 4
     }
-
   ]
 }

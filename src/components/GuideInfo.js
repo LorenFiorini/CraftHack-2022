@@ -12,12 +12,12 @@ const GuideInfo = () => {
   ];
 
   useEffect(() => {
-    axios.get("http://localhost:3001/guids").then((response) => {
-      setGuids(response.data);
+    axios.get("http://localhost:3001/guides").then((response) => {
+      setGuides(response.data);
     });
   }, []);
 
-  const [guids, setGuids] = useState([]);
+  const [guides, setGuides] = useState([]);
   const [newGuid, setNewGuid] = useState("");
   const [newName, setNewName] = useState("");
   const [newLanguage, setNewLanguage] = useState([]);
@@ -25,14 +25,13 @@ const GuideInfo = () => {
   const [newArea, setNewArea] = useState("");
   const [newDescription, setNewDescription] = useState("");
 
-  const addGuid = (event) => {
+  const addGuide = (event) => {
     event.preventDefault();
     const guidObject = {
       name: newName,
       languages: newLanguage,
       date: newDate,
       area: newArea,
-      rating: 0,
       description: newDescription,
       pricePerHour: 2000,
       rating: (Math.random() * 5).toFixed(2),
@@ -43,14 +42,15 @@ const GuideInfo = () => {
       newName === "" ||
       newLanguage === "" ||
       newDate === "" ||
-      newArea === ""
+      newArea === "" ||
+      newDescription === ""
     ) {
       alert("please fill all the fields");
       return;
     }
-    axios.post("http://localhost:3001/guids", guidObject).then((response) => {
+    axios.post("http://localhost:3001/guides", guidObject).then((response) => {
       console.log(response);
-      setGuids(guids.concat(response.data));
+      setGuides(guides.concat(response.data));
       setNewName("");
       setNewLanguage([]);
       setNewDate("");
@@ -79,7 +79,7 @@ const GuideInfo = () => {
 
   return (
     <>
-      <form onSubmit={addGuid}>
+      <form onSubmit={addGuide}>
         <div>
           <label>Name</label>
           <input type="text" value={newName} onChange={nameChangeHandler} />
