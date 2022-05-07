@@ -81,6 +81,10 @@ const GuideInfo = () => {
     <>
       <form onSubmit={addGuid}>
         <div>
+          <label>Name</label>
+          <input type="text" value={newName} onChange={nameChangeHandler} />
+        </div>
+        <div>
           <h4>Languages</h4>
           {newLanguage}
         </div>
