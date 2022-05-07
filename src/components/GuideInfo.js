@@ -4,7 +4,6 @@ import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
 
 const GuideInfo = () => {
-
   const Languages = [
     { label: "Albanian", value: "Albanian" },
     { label: "Arabic", value: "Arabic" },
@@ -24,25 +23,27 @@ const GuideInfo = () => {
   const [newLanguage, setNewLanguage] = useState([]);
   const [newDate, setNewDate] = useState("");
   const [newArea, setNewArea] = useState("");
-  const [newDescription, setNewDescription] = useState('')
+  const [newDescription, setNewDescription] = useState("");
 
   const addGuid = (event) => {
     event.preventDefault();
     const guidObject = {
       name: newName,
-      language: newLanguage,
+      languages: newLanguage,
       date: newDate,
       area: newArea,
+      rating: 0,
       description: newDescription,
-      rating: (Math.random() * 5).toFixed(2)
+      totalVotes: 0,
+      pricePerHour: 2000,
+      rating: (Math.random() * 5).toFixed(2),
     };
 
     if (
       newName === "" ||
-      newLanguage === [] ||
+      newLanguage === "" ||
       newDate === "" ||
-      newArea === "" ||
-      newDescription === ""
+      newArea === ""
     ) {
       alert("please fill all the fields");
       return;
@@ -54,19 +55,17 @@ const GuideInfo = () => {
       setNewLanguage([]);
       setNewDate("");
       setNewArea("");
-      setNewDescription('')
+      setNewDescription("");
       setNewGuid(guidObject);
     });
     console.log(newGuid);
   };
 
-  
-
   const nameChangeHandler = (event) => {
     setNewName(event.target.value);
   };
   const languageChangeHandler = (e) => {
-    setNewLanguage(e.split(','))
+    setNewLanguage(e.split(","));
   };
   const dateChangeHandler = (event) => {
     setNewDate(event.target.value);
@@ -79,72 +78,77 @@ const GuideInfo = () => {
   };
 
   return (
-    <form onSubmit={addGuid}>
-      <div>
-        <label>Name</label>
-        <input type="text" value={newName} onChange={nameChangeHandler} />
-      </div>
-      <div>
+    <>
+      <form onSubmit={addGuid}>
         <div>
           <h4>Languages</h4>
           {newLanguage}
         </div>
 
-        <MultiSelect onChange={languageChangeHandler} value={newLanguage} options={Languages} />
-      </div>
-      <div>
-        <label>
-          Description:
-          <textarea value={newDescription} onChange={descriptionChangeHandler} />
-        </label>
-      </div>
-      <div>
-        <label>pick a date:</label>
-        <input
-          type="date"
-          name="date"
-          value={newDate}
-          onChange={dateChangeHandler}
+        <MultiSelect
+          onChange={languageChangeHandler}
+          value={newLanguage}
+          options={Languages}
         />
-      </div>
-      <div>
-        <label>area</label>
-        <select
-          name="area"
-          placeholder="select a district"
-          value={newArea}
-          onChange={areaChangeHandler}
-        >
-          <option disabled value="">Select...</option>
-          <option value="I">Várkerület</option>
-          <option value="II">II</option>
-          <option value="III">Óbuda-Békásmegyer</option>
-          <option value="IV"> Újpest</option>
-          <option value="V">Belváros-Lipótváros</option>
-          <option value="VI">Terézváros</option>
-          <option value="VII">Erzsébetváros</option>
-          <option value="VIII">Józsefváros</option>
-          <option value="IX">Ferencváros</option>
-          <option value="X">Kőbánya</option>
-          <option value="XI">Újbuda</option>
-          <option value="XII">Hegyvidék</option>
-          <option value="XIII">Vizafogó</option>
-          <option value="XIV">Zugló</option>
-          <option value="XV">Rákospalota</option>
-          <option value="XVI">XVI</option>
-          <option value="XVII">Rákosmente</option>
-          <option value="XVIII">Pestszentlőrinc</option>
-          <option value="XIX">Kispest</option>
-          <option value="XX">Pesterzsébet</option>
-          <option value="XXI">Csepel</option>
-          <option value="XXII">Budafok-Tétény</option>
-          <option value="XXIII">Soroksár</option>
-        </select>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+        <div>
+          <label>
+            Description:
+            <textarea
+              value={newDescription}
+              onChange={descriptionChangeHandler}
+            />
+          </label>
+        </div>
+        <div>
+          <label>pick a date:</label>
+          <input
+            type="date"
+            name="date"
+            value={newDate}
+            onChange={dateChangeHandler}
+          />
+        </div>
+        <div>
+          <label>area</label>
+          <select
+            name="area"
+            placeholder="select a district"
+            value={newArea}
+            onChange={areaChangeHandler}
+          >
+            <option disabled value="">
+              Select...
+            </option>
+            <option value="I">Várkerület</option>
+            <option value="II">II</option>
+            <option value="III">Óbuda-Békásmegyer</option>
+            <option value="IV"> Újpest</option>
+            <option value="V">Belváros-Lipótváros</option>
+            <option value="VI">Terézváros</option>
+            <option value="VII">Erzsébetváros</option>
+            <option value="VIII">Józsefváros</option>
+            <option value="IX">Ferencváros</option>
+            <option value="X">Kőbánya</option>
+            <option value="XI">Újbuda</option>
+            <option value="XII">Hegyvidék</option>
+            <option value="XIII">Vizafogó</option>
+            <option value="XIV">Zugló</option>
+            <option value="XV">Rákospalota</option>
+            <option value="XVI">XVI</option>
+            <option value="XVII">Rákosmente</option>
+            <option value="XVIII">Pestszentlőrinc</option>
+            <option value="XIX">Kispest</option>
+            <option value="XX">Pesterzsébet</option>
+            <option value="XXI">Csepel</option>
+            <option value="XXII">Budafok-Tétény</option>
+            <option value="XXIII">Soroksár</option>
+          </select>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </>
   );
 };
 

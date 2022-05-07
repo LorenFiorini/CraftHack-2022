@@ -2,13 +2,8 @@ import React from 'react'
 
 const FilteredItems = () => {
   return (
-    <div>
-      <div>
-            <label>Name</label>
-            <input type="text" 
-            // value={newName} onChange={nameChangeHandler} 
-            />
-        </div>
+    <div className='filter-model'><div className='p-2'>
+
         <div>
             <label>languages</label>
             <select name='languages' 
@@ -61,7 +56,7 @@ const FilteredItems = () => {
         <div>
             <button>Search</button>
         </div>
-    </div>
+    </div></div>
   )
 }
 

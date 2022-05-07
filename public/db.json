@@ -1,0 +1,38 @@
+{
+  "guids": [
+    {
+      "img": "https://picsum.photos/id/43/300/200","name": "Hassan",
+      "languages": ["hungarian","french", "german"],
+      "date": "2022-05-19",
+      "area": "VIII",
+      "rating": "",
+      "description": "I am a native English speaker from England, I have lived all my life in budapest, Come join me on an adventure around the heart of the city of Budapest",
+      "totalVotes": 0,
+      "pricePerHour": 2000,
+      "id": 2
+    },
+    {
+      "img": "https://picsum.photos/id/25/300/200","name": "Zolt",
+      "languages": ["english", "hungarian", "spanish"],
+      "date": "2022-06-12",
+      "area": "XII",
+      "rating": 4.2,
+      "description": "HUngarian middle-age man, Born, raised and breed in budapest, Won't it be great to get around the tourist attraction around the River side to Parliament building",
+      "totalVotes": 8,
+      "pricePerHour": 2000,
+      "id": 3
+    },
+    {
+      "img": "https://picsum.photos/id/8/300/200","name": "Henry",
+      "languages": ["french", "english"],
+      "date": "2022-07-02",
+      "area": "VII",
+      "rating": 5,
+      "description": "Riding TIER scooter aroud the Buda castle have never been a bad idea, I am Roland, A US citizen who fell in love with this city, Let's have a fun filled tour around the castle",
+      "totalVotes": 63,
+      "pricePerHour": 1400,
+      "id": 4
+    }
+
+  ]
+}

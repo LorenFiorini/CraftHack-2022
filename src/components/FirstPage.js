@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const FirstPage = () => {
   const navigate = useNavigate();
   const tourButtonHandler = () => {
-    navigate("./login");
+    navigate("./userinfo");
   };
 
   const [currentScreen, setCurrentScreen] = useState("splash");

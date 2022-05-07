@@ -12,14 +12,19 @@ const App = () => {
   return (
     <Router>
       <div className="tier">
-        <img src="img/phone-frame.png" alt="phone" className=" bg_app" />
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/guidinfo" element={<GuideInfo />} />
-          <Route path="/userinfo" element={<UserInfo />} />
-          <Route path="/" element={<FirstPage />} exact />
-          {/* <Route path="/" element={<TourBtn />} exact /> */}
-        </Routes>
+          <img src="img/phone-frame.png" alt="phone" className=" bg_app" />
+        <div className="tier-content">
+        {/* <div className="scrollable"> */}
+          <Routes>
+            <Route path="/" element={<FirstPage />} exact />
+            <Route path="/login" element={<Login />} />
+            <Route path="/guidinfo" element={<GuideInfo />} />
+            <Route path="/userinfo" element={<UserInfo />} />
+            {/* <Route path="/" element={<TourBtn />} exact /> */}
+          </Routes>{" "}
+        {/* </div> */}
+        </div>
+        
       </div>
     </Router>
   );
