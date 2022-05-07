@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GuideInfo from "./components/GuideInfo";
 import Login from "./components/Login";
 import UserInfo from "./components/UserInfo";
-import TourBtn from "./components/TourBtn";
 import FirstPage from "./components/FirstPage";
 import "./style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";

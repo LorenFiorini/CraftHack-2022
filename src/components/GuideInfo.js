@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
+import DatePicker from "react-date-picker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const GuideInfo = () => {
   const Languages = [
@@ -18,10 +20,10 @@ const GuideInfo = () => {
   }, []);
 
   const [guides, setGuides] = useState([]);
-  const [newGuid, setNewGuid] = useState("");
+  const [newGuide, setnewGuide] = useState("");
   const [newName, setNewName] = useState("");
   const [newLanguage, setNewLanguage] = useState([]);
-  const [newDate, setNewDate] = useState("");
+  const [newDate, setNewDate] = useState(new Date());
   const [newArea, setNewArea] = useState("");
   const [newDescription, setNewDescription] = useState("");
 
@@ -56,9 +58,9 @@ const GuideInfo = () => {
       setNewDate("");
       setNewArea("");
       setNewDescription("");
-      setNewGuid(guidObject);
+      setnewGuide(guidObject);
     });
-    console.log(newGuid);
+    console.log(newGuide);
   };
 
   const nameChangeHandler = (event) => {
@@ -67,9 +69,7 @@ const GuideInfo = () => {
   const languageChangeHandler = (e) => {
     setNewLanguage(e.split(","));
   };
-  const dateChangeHandler = (event) => {
-    setNewDate(event.target.value);
-  };
+
   const areaChangeHandler = (event) => {
     setNewArea(event.target.value);
   };
@@ -105,12 +105,14 @@ const GuideInfo = () => {
         </div>
         <div>
           <label>pick a date:</label>
-          <input
+        
+
+          {/* <input
             type="date"
             name="date"
             value={newDate}
             onChange={dateChangeHandler}
-          />
+          /> */}
         </div>
         <div>
           <label>area</label>
