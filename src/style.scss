@@ -1,3 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  // background-color: gray;
+}
 .tier {
-  background-color: red;
+  background-repeat: no-repeat;
+  background-size: contain;
+  // background-color: yellow;
+  width: 373px;
+  height: 828px;
+  border-radius: 50px;
+  padding: 41px 15px;
+  overflow: hidden;
+}
+button{
+  z-index: 99;
+  position: relative;
+}
+.first-page{
+  position: relative;
+  margin: -41px -15px;
+}
+.sidebar {
+  position: relative;
+  button {
+    position: absolute;
+    top: 357px;
+    left: 8px;
+    width: 305px;
+    height: 65px;
+    background: transparent;
+    border: 0;
+    color: transparent;
+    
+  }
+}
+.landing {
+  position: relative;
+  button {
+    position: absolute;
+    top: 72px;
+    left: 16px;
+    width: 40px;
+    height: 41px;
+    background: transparent; 
+    border: 0;
+    color: transparent;
+  }
+}
+.prototype_images {
+  max-width: 100%;
+  height: 828px;
+  padding-top: 12px;
+}
+.bg_app {
+  height: 100%;
+  position: absolute;
+  z-index: 9;
 }

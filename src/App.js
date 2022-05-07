@@ -4,18 +4,21 @@ import GuideInfo from "./components/GuideInfo";
 import Login from "./components/Login";
 import UserInfo from "./components/UserInfo";
 import TourBtn from "./components/TourBtn";
+import FirstPage from "./components/FirstPage";
 import "./style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
     <Router>
+        <img src="img/phone-frame.png" alt="phone" className=" bg_app" />
       <div className="tier">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/guidinfo" element={<GuideInfo />} />
           <Route path="/userinfo" element={<UserInfo />} />
-          <Route path="/" element={<TourBtn />} exact />
+          <Route path="/" element={<FirstPage />} exact />
+          {/* <Route path="/" element={<TourBtn />} exact /> */}
         </Routes>
       </div>
     </Router>
