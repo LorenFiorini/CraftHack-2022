@@ -11,11 +11,7 @@ const GuideInfo = () => {
     { label: "Spanish", value: "Spanish" },
   ];
 
-  useEffect(() => {
-    axios.get("http://localhost:3001/guides").then((response) => {
-      setGuides(response.data);
-    });
-  }, []);
+
 
   const [guides, setGuides] = useState([]);
   const [newGuide, setnewGuide] = useState("");
@@ -25,6 +21,12 @@ const GuideInfo = () => {
   const [newArea, setNewArea] = useState("");
   const [newDescription, setNewDescription] = useState("");
 
+  useEffect(() => {
+    axios.get("http://localhost:3001/guides").then((response) => {
+      setGuides(response.data);
+    });
+  }, []);
+  
   const addGuide = (event) => {
     event.preventDefault();
     const guidObject = {
@@ -36,6 +38,7 @@ const GuideInfo = () => {
       pricePerHour: 2000,
       rating: (Math.random() * 5).toFixed(2),
       totalVotes: Math.floor(Math.random() * (220 - 55 + 1) + 55),
+      proileImg: `https://i.pravatar.cc/${Math.floor(Math.random() * 1000)}` ,
     };
 
     if (
