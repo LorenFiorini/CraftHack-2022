@@ -1,6 +1,10 @@
 import React from 'react'
 
-const UserInfo = () => {
+const UserInfo = ({}) => {
+
+
+
+
   return (
     <div>
         <div>
@@ -43,7 +47,6 @@ const UserInfo = () => {
                 <option value="XXI">Csepel</option>
                 <option value="XXII">Budafok-Tétény</option>
                 <option value="XXIII">Soroksár</option>
-                <button type='submit'>Submit</button>
             </select>
         </div>
         <div>
