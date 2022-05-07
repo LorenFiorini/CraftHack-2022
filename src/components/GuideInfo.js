@@ -61,6 +61,9 @@ const GuideInfo = () => {
     console.log(newGuide);
   };
 
+  const dateChangeHandler = (event) =>{
+      setNewDate(event.value)
+  }
   const nameChangeHandler = (event) => {
     setNewName(event.target.value);
   };
@@ -107,7 +110,7 @@ const GuideInfo = () => {
             type="date"
             name="date"
             value={newDate}
-            // onChange={dateChangeHandler}
+            onChange={dateChangeHandler}
           />
         </div>
         <div className="name_sect">
