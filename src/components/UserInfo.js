@@ -11,7 +11,7 @@ const UserInfo = () => {
   const handleShow = () => setFilterClick(true);
 
   const getData = () => {
-    fetch("db.json", {
+    fetch("dbReal.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -83,7 +83,7 @@ const UserInfo = () => {
                   </p>
                   <div className="guides-languages">
                     {tour.languages.map((lang) => (
-                      <span>{lang}</span>
+                      <span key={lang}>{lang}</span>
                     ))}
                   </div>
                   <div className="d-flex footer-guide">
