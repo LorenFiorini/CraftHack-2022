@@ -1,7 +1,7 @@
 {
   "guides": [
     {
-      "img": "https://picsum.photos/id/43/300/200",
+      "img": "https://imgur.com/Z5dbbCw.png",
       "name": "Hassan",
       "languages": ["hungarian", "french", "german"],
       "date": "2022-05-19",
@@ -13,7 +13,7 @@
       "id": 2
     },
     {
-      "img": "https://picsum.photos/id/25/300/200",
+      "img": "https://imgur.com/du3xsId.png",
       "name": "Zolt",
       "languages": ["english", "hungarian", "spanish"],
       "date": "2022-06-12",
@@ -25,7 +25,7 @@
       "id": 3
     },
     {
-      "img": "https://picsum.photos/id/8/300/200",
+      "img": "https://imgur.com/Z5dbbCw.png",
       "name": "Henry",
       "languages": ["french", "english"],
       "date": "2022-07-02",
@@ -35,6 +35,18 @@
       "totalVotes": 63,
       "pricePerHour": 1400,
       "id": 4
+    },
+    {
+      "img": "https://imgur.com/lQhEryo.png",
+      "name": "Adam Bédo",
+      "languages": ["hungarian", "german", "french"],
+      "date": "2022-06-05",
+      "area": "XII",
+      "rating": 2.9,
+      "description": "Nem berszelek English, Tour only in the great city of Budapest, English not too good.",
+      "totalVotes": 72,
+      "pricePerHour": 1865,
+      "id": 5
     }
   ]
 }

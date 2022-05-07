@@ -89,6 +89,7 @@ const UserInfo = () => {
                     })}
                   </div>
 
+                  
 
                   <p> {`${tour.rating} | ${tour.totalVotes}`} Reviews</p>
                   <p>District: {tour.area}</p>
