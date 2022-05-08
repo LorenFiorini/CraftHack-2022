@@ -3,7 +3,7 @@ import React from 'react'
 const FilteredItems = () => {
   return (
     <div className='filter-model'><div className='p-2'>
-
+<p>Filter by</p>
         <div>
             <label>languages</label>
             <select name='languages' 
@@ -17,12 +17,7 @@ const FilteredItems = () => {
                 <option value="BN">Bengali</option>
             </select>
         </div>
-        <div>
-            <label>pick a date:</label>
-            <input type="date" name="date" 
-            // value={newDate} onChange={dateChangeHandler}
-            />            
-        </div>
+       
         <div>
             <label >area</label>
             <select name='area' placeholder='select a district' 
