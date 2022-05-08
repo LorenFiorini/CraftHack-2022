@@ -61,7 +61,7 @@ const GuideInfo = () => {
       pricePerHour: 2000,
       rating: (Math.random() * 5).toFixed(2),
       totalVotes: Math.floor(Math.random() * (220 - 55 + 1) + 55),
-      proileImg: `https://i.pravatar.cc/${Math.floor(Math.random() * 1000)}`,
+      profileImg: `https://i.pravatar.cc/${Math.floor(Math.random() * 1000)}`,
     };
 
     if (
