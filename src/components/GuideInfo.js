@@ -5,12 +5,32 @@ import "react-multiple-select-dropdown-lite/dist/index.css";
 
 const GuideInfo = () => {
   const Languages = [
-    { label: "Albanian", value: "Albanian" },
-    { label: "Arabic", value: "Arabic" },
     { label: "English", value: "English" },
+    { label: "Hungarian", value: "Hungarian" },
+    { label: "French", value: "French" },
+    { label: "German", value: "German" },
+    { label: "Persian", value: "Persian" },
+    { label: "Arabic", value: "Arabic" },
+    { label: "Chinese", value: "Chinese" },
     { label: "Spanish", value: "Spanish" },
-  ];
+    { label: "Urdu", value: "Urdu" },
+    { label: "Bengali", value: "Bengali" },
+    { label: "Portuguese", value: "Portuguese" },
+    { label: "Russian", value: "Russian" },
+    { label: "Japanese", value: "Japanese" },
+    { label: "Javanese", value: "Javanese" },
+    { label: "Punjabi", value: "Punjabi" },
+    { label: "Wu", value: "Wu" },
+    { label: "Telugu", value: "Telugu" },
+    { label: "Vietnamese", value: "Vietnamese" },
+    { label: "Marathi", value: "Marathi" },
+    { label: "Korean", value: "Korean" },
+    { label: "Tamil", value: "Tamil" },
+    { label: "Italian", value: "Italian" },
+    { label: "Turkish", value: "Turkish" },
+    { label: "Cantonese", value: "Cantonese" },
 
+  ];
 
 
   const [guides, setGuides] = useState([]);
@@ -26,7 +46,7 @@ const GuideInfo = () => {
       setGuides(response.data);
     });
   }, []);
-  
+
   const addGuide = (event) => {
     event.preventDefault();
     const guidObject = {
@@ -38,7 +58,7 @@ const GuideInfo = () => {
       pricePerHour: 2000,
       rating: (Math.random() * 5).toFixed(2),
       totalVotes: Math.floor(Math.random() * (220 - 55 + 1) + 55),
-      proileImg: `https://i.pravatar.cc/${Math.floor(Math.random() * 1000)}` ,
+      proileImg: `https://i.pravatar.cc/${Math.floor(Math.random() * 1000)}`,
     };
 
     if (
@@ -64,9 +84,9 @@ const GuideInfo = () => {
     console.log(newGuide);
   };
 
-  const dateChangeHandler = (event) =>{
-      setNewDate(event.value)
-  }
+  const dateChangeHandler = (event) => {
+    setNewDate(event.value);
+  };
   const nameChangeHandler = (event) => {
     setNewName(event.target.value);
   };
