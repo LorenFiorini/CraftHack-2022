@@ -9,7 +9,6 @@ const UserInfo = () => {
   const handleClose = () => setFilterClick(false);
   const handleShow = () => setFilterClick(true);
 
-
   const getData = () => {
     fetch("dbReal.json", {
       headers: {
@@ -18,7 +17,6 @@ const UserInfo = () => {
       },
     })
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (res) {
@@ -30,6 +28,26 @@ const UserInfo = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const filterBtn = () => {
+    var filter = {
+      // languages: "german",
+      name: "Zolt",
+    };
+
+
+    let users = tourData.filter(function (item) {
+      for (var key in filter) {
+        // if (key === "languages") {
+        //   if (item[key] !== filter[key]) return false;
+        // }
+        if (item[key] === undefined || item[key] !== filter[key]) return false;
+      }
+      return true;
+    });
+
+    console.log(users);
+  };
 
   return (
     <>
@@ -44,7 +62,7 @@ const UserInfo = () => {
             <button onClick={handleShow}>Filter</button>
           </div>
           <div className="sort">
-            <button onClick={handleShow}>Sort</button>
+            <button onClick={filterBtn}>Sort</button>
           </div>
         </div>
 
@@ -89,8 +107,6 @@ const UserInfo = () => {
                     })}
                   </div>
 
-                  
-
                   <p> {`${tour.rating} | ${tour.totalVotes}`} Reviews</p>
                   <p>District: {tour.area}</p>
                 </div>
@@ -127,13 +143,12 @@ const UserInfo = () => {
       </div>
       <Modal show={filterClick} onHide={handleClose}>
         <FilteredItems />
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Filter
           </Button>
         </Modal.Footer>
       </Modal>
