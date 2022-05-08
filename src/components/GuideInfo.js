@@ -3,34 +3,37 @@ import axios from "axios";
 import MultiSelect from "react-multiple-select-dropdown-lite";
 import "react-multiple-select-dropdown-lite/dist/index.css";
 
-const GuideInfo = () => {
-  const Languages = [
-    { label: "English", value: "English" },
-    { label: "Hungarian", value: "Hungarian" },
-    { label: "French", value: "French" },
-    { label: "German", value: "German" },
-    { label: "Persian", value: "Persian" },
-    { label: "Arabic", value: "Arabic" },
-    { label: "Chinese", value: "Chinese" },
-    { label: "Spanish", value: "Spanish" },
-    { label: "Urdu", value: "Urdu" },
-    { label: "Bengali", value: "Bengali" },
-    { label: "Portuguese", value: "Portuguese" },
-    { label: "Russian", value: "Russian" },
-    { label: "Japanese", value: "Japanese" },
-    { label: "Javanese", value: "Javanese" },
-    { label: "Punjabi", value: "Punjabi" },
-    { label: "Wu", value: "Wu" },
-    { label: "Telugu", value: "Telugu" },
-    { label: "Vietnamese", value: "Vietnamese" },
-    { label: "Marathi", value: "Marathi" },
-    { label: "Korean", value: "Korean" },
-    { label: "Tamil", value: "Tamil" },
-    { label: "Italian", value: "Italian" },
-    { label: "Turkish", value: "Turkish" },
-    { label: "Cantonese", value: "Cantonese" },
 
-  ];
+export const Languages = [
+  { label: "English", value: "English" },
+  { label: "Hungarian", value: "Hungarian" },
+  { label: "French", value: "French" },
+  { label: "German", value: "German" },
+  { label: "Persian", value: "Persian" },
+  { label: "Arabic", value: "Arabic" },
+  { label: "Chinese", value: "Chinese" },
+  { label: "Spanish", value: "Spanish" },
+  { label: "Urdu", value: "Urdu" },
+  { label: "Bengali", value: "Bengali" },
+  { label: "Portuguese", value: "Portuguese" },
+  { label: "Russian", value: "Russian" },
+  { label: "Japanese", value: "Japanese" },
+  { label: "Javanese", value: "Javanese" },
+  { label: "Punjabi", value: "Punjabi" },
+  { label: "Wu", value: "Wu" },
+  { label: "Telugu", value: "Telugu" },
+  { label: "Vietnamese", value: "Vietnamese" },
+  { label: "Marathi", value: "Marathi" },
+  { label: "Korean", value: "Korean" },
+  { label: "Tamil", value: "Tamil" },
+  { label: "Italian", value: "Italian" },
+  { label: "Turkish", value: "Turkish" },
+  { label: "Cantonese", value: "Cantonese" },
+
+];
+
+const GuideInfo = () => {
+
 
 
   const [guides, setGuides] = useState([]);

@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import MultiSelect from "react-multiple-select-dropdown-lite";
+import "react-multiple-select-dropdown-lite/dist/index.css";
+import { Languages } from './GuideInfo';
 
 const FilteredItems = () => {
+
+    const [newLanguage, setNewLanguage] = useState([]);
+
   return (
     <div className='filter-model'><div className='p-2'>
 <p>Filter by</p>
         <div>
             <label>languages</label>
-            <select name='languages' 
-            // value={newLanguage} onChange={languageChangeHandler}
-            >
-                <option disabled value="">Select a country</option>
-                <option value="SQ">Albanian</option>
-                <option value="AR">Arabic</option>
-                <option value="HY">Armenian</option>
-                <option value="EU">Basque</option>
-                <option value="BN">Bengali</option>
-            </select>
+            <MultiSelect
+            onChange={(e)=> setNewLanguage(e.split(',')) }
+            value={newLanguage}
+            options={Languages}
+          />
         </div>
        
         <div>
@@ -47,9 +48,6 @@ const FilteredItems = () => {
                 <option value="XXII">Budafok-Tétény</option>
                 <option value="XXIII">Soroksár</option>
             </select>
-        </div>
-        <div>
-            <button>Search</button>
         </div>
     </div></div>
   )
