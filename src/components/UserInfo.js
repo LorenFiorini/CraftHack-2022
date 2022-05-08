@@ -53,7 +53,7 @@ const UserInfo = () => {
     <>
       <div className="scrollable">
         <div className="guide-login text-white">
-          <a className="text-white" href="/guidinfo">
+          <a className="text-white" href="/guideinfo">
             Login as a guide
           </a>
         </div>
@@ -61,9 +61,9 @@ const UserInfo = () => {
           <div className="filter">
             <button onClick={handleShow}>Filter</button>
           </div>
-          <div className="sort">
+          {/* <div className="sort">
             <button onClick={filterBtn}>Sort</button>
-          </div>
+          </div> */}
         </div>
 
         <div className="guides">

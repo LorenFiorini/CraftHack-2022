@@ -7,7 +7,7 @@ const Login = () => {
 
 
   const guidButtonHandler =() =>{
-      navigate('/guidinfo')
+      navigate('/guideinfo')
     }
     const tourButtonHandler =() =>{
         navigate('/userinfo')
